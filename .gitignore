@@ -3,3 +3,4 @@ logs/
 models/*.joblib
 __pycache__/
 .venv/
+mlflow.db

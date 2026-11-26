@@ -19,6 +19,6 @@ governance:
   log_retention_days: 183
 
 mlflow:
-  tracking_uri: file:./mlruns
+  tracking_uri: sqlite:///mlflow.db
   experiment: credit-score-eu
   registered_model: CreditScore-EU
