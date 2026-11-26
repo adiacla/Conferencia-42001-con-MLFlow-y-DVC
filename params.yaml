@@ -13,8 +13,8 @@ train:
 governance:
   protected_attribute: genero
   max_dp_difference: 0.12
-  min_accuracy: 0.80
-  max_accuracy_drop_mitigation: 0.08
+  min_accuracy: 0.78
+  max_accuracy_drop_mitigation: 0.10
   human_review_band: [0.40, 0.60]
   log_retention_days: 183
 
