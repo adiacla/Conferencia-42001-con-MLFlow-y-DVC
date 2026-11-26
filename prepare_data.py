@@ -120,9 +120,10 @@ stages:
     - path: {p['data']['path']}
       md5: {md5}
 """
-    (gov.ROOT / "dvc.lock").write_text(dvc_lock_content, encoding="utf-8")
+# En prepare_data.py, reemplaza las líneas que escriben dvc.lock por solo esto:
+    card_path = csv_path.parent / "data_card.json"
+    card_path.write_text(json.dumps(data_card, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"[OK] Data Card guardada en {card_path} (SHA-256: {sha[:12]}...)")
-
 
 if __name__ == "__main__":
     main()

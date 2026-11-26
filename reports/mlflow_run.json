@@ -1,0 +1,18 @@
+{
+  "model_name": "CreditScore-EU",
+  "model_version": 1,
+  "mlflow_run_id": "431a0df98dfd4151998db5f1e6ba7308",
+  "dataset_sha256": "5a893a14955f20debf310f1c35698ece3087c0d824210274851fb9fbaac7f22b",
+  "git_commit": "3148e68",
+  "trained_at": "2026-11-26T19:10:31+00:00",
+  "feature_columns": [
+    "edad",
+    "ingresos_anuales_eur",
+    "deuda_actual_eur",
+    "historial_pagos_meses",
+    "impagos_previos",
+    "zona_postal_vulnerable",
+    "genero_Masculino"
+  ],
+  "model_sha256": "86255b2536e03bb8f4bd52a471d578a628a23b4ce4efaa0ba6ac9fb435f62f9b"
+}

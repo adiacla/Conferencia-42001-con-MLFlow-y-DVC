@@ -18,7 +18,10 @@ governance:
   human_review_band: [0.40, 0.60]
   log_retention_days: 183
 
+project:
+  name: flexiscore-UNAB
+
 mlflow:
   tracking_uri: sqlite:///mlflow.db
-  experiment: credit-score-eu
-  registered_model: CreditScore-EU
+  experiment: flexiscore-UNAB
+  registered_model: flexiscore-UNAB

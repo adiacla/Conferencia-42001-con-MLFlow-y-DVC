@@ -17,7 +17,7 @@ import streamlit as st
 import gov
 
 st.set_page_config(
-    page_title="CreditScore-EU | Gobernanza MLOps (CRISP-ML(Q))",
+    page_title="FlexiScore-UNAB | Gobernanza MLOps (CRISP-ML(Q))",
     page_icon="🛡️",
     layout="wide",
 )
@@ -110,6 +110,15 @@ def predecir_directo_o_api(payload: dict) -> dict:
 st.title("🛡️ CreditScore-EU — Sistema de IA de Alto Riesgo Gobernado")
 st.caption("Marco Metodológico: **CRISP-ML(Q)** | Cumplimiento: **Reglamento (UE) 2024/1689 (EU AI Act)** & **ISO/IEC 42001**")
 
+with st.expander("📘 Guía Rápida de Uso de la Plataforma (Taller MLOps & Gobernanza)", expanded=False):
+    st.markdown("""
+    **¿Cómo explorar este sistema de IA de Alto Riesgo (CRISP-ML(Q) + EU AI Act + ISO/IEC 42001)?**
+    1. **Producción (Pestaña 1):** Ingresa los datos de un solicitante y pulsa **Evaluar Solicitud**. Observa la decisión, la explicación local (**SHAP - Art. 13**), el aviso de transparencia (**Art. 86**) y si se activa la **Revisión Humana Obligatoria (Art. 14)**.
+    2. **Auditoría Pre-Despliegue (Pestaña 2):** Ejecuta los **17 controles automatizados** (Quality Gate) que verifican equidad, exactitud, firma criptográfica `SHA-256` e integridad de datos antes de permitir el paso a producción.
+    3. **Datos, EDA y Model Card (Pestaña 3):** Inspecciona el análisis exploratorio (sesgo histórico), los 8 contratos de calidad de datos, la *Model Card* (Anexo IV) y el historial de versiones en **Git + DVC**.
+    4. **Monitoreo en Vivo (Pestaña 4):** Audita el registro inmutable de predicciones (`predictions.jsonl`), verifica la seudonimización (RGPD) y comprueba la integridad de los hashes `SHA-256`.
+    """)
+    
 # Sidebar con estado del sistema y control humano
 with st.sidebar:
     st.header("Estado de Gobernanza")
@@ -130,10 +139,8 @@ with st.sidebar:
     st.divider()
     st.markdown("**¿Quién controla el sistema?**")
     st.markdown(
-        "- **Nivel Técnico:** Puerta de Auditoría (`audit.py`) + Hash SHA-256.
-"
-        "- **Nivel Operativo:** Analista de Riesgos (Supervisión Humana Art. 14).
-"
+        "- **Nivel Técnico:** Puerta de Auditoría (`audit.py`) + Hash SHA-256."
+        "- **Nivel Operativo:** Analista de Riesgos (Supervisión Humana Art. 14)."
         "- **Nivel Ciudadano:** Derecho a explicación y apelación (Art. 86)."
     )
 
@@ -350,3 +357,14 @@ with tab4:
                 st.json(registros[-1])
     else:
         st.info("Aún no hay predicciones registradas. Ve a la Pestaña 1 y evalúa una solicitud.")
+
+st.divider()
+st.markdown(
+    """
+    <div style="text-align: center; color: #64748B; font-size: 0.88rem; padding: 10px 0 20px 0;">
+        <strong>Aviso Académico:</strong> Este sistema constituye un ejercicio académico experimental desarrollado con fines formativos y de investigación en ingeniería de MLOps, gobernanza de IA (ISO/IEC 42001) y cumplimiento regulatorio (EU AI Act). Los datos y evaluaciones son simulados y no representan asesoría ni decisiones financieras reales.<br>
+        <strong>&copy; 2026 Todos los derechos reservados &mdash; Elaborado por Alfredo Díaz.</strong>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)

@@ -1,0 +1,164 @@
+{
+  "modelo": "CreditScore-EU",
+  "version": 1,
+  "run_id": "431a0df98dfd4151998db5f1e6ba7308",
+  "git_commit": "608c916",
+  "fecha_utc": "2026-11-26T20:25:15+00:00",
+  "aprobado": true,
+  "controles": [
+    {
+      "id": "C01",
+      "control": "Datos versionados e íntegros (DVC)",
+      "resultado": "PASA",
+      "severidad": "BLOQUEANTE",
+      "detalle": "md5 lock=9d5194bd54… actual=9d5194bd54…",
+      "iso42001": "A.7.5 Procedencia de datos",
+      "ai_act": "Art. 10, 11, 12"
+    },
+    {
+      "id": "C02",
+      "control": "Contratos de calidad de datos superados",
+      "resultado": "PASA",
+      "severidad": "BLOQUEANTE",
+      "detalle": "8/8 controles OK",
+      "iso42001": "A.7.4 Calidad de datos",
+      "ai_act": "Art. 10.2 y 10.3"
+    },
+    {
+      "id": "C03",
+      "control": "El modelo se entrenó con el dataset actual",
+      "resultado": "PASA",
+      "severidad": "BLOQUEANTE",
+      "detalle": "sha256 modelo=5a893a1495… dataset=5a893a1495…",
+      "iso42001": "A.6.2.7 Documentación técnica",
+      "ai_act": "Art. 11, 12"
+    },
+    {
+      "id": "C04",
+      "control": "Paridad demográfica tras mitigación <= umbral",
+      "resultado": "PASA",
+      "severidad": "BLOQUEANTE",
+      "detalle": "DP=0.081 (antes 0.342); umbral 0.12",
+      "iso42001": "A.5.2 Evaluación de impacto; 8.4",
+      "ai_act": "Art. 10.2.f"
+    },
+    {
+      "id": "C05",
+      "control": "Exactitud >= mínimo declarado",
+      "resultado": "PASA",
+      "severidad": "BLOQUEANTE",
+      "detalle": "exactitud=0.793; mínimo 0.78",
+      "iso42001": "A.6.2.4 Verificación y validación",
+      "ai_act": "Art. 15"
+    },
+    {
+      "id": "C06",
+      "control": "Coste de equidad aceptable",
+      "resultado": "PASA",
+      "severidad": "BLOQUEANTE",
+      "detalle": "caída de exactitud=0.093; máximo 0.1",
+      "iso42001": "8.3 Tratamiento del riesgo",
+      "ai_act": "Art. 9"
+    },
+    {
+      "id": "C07",
+      "control": "Equalized odds (informativo, no bloquea)",
+      "resultado": "FALLA",
+      "severidad": "INFO",
+      "detalle": "EO=0.545. Criterio alternativo de equidad.",
+      "iso42001": "9.1 Seguimiento",
+      "ai_act": "Art. 10.2.f"
+    },
+    {
+      "id": "C17",
+      "control": "Decisiones cambiadas por el mitigador (informativo)",
+      "resultado": "PASA",
+      "severidad": "INFO",
+      "detalle": "18.7% de decisiones difieren del modelo base",
+      "iso42001": "9.1 Seguimiento",
+      "ai_act": "Art. 14, 15"
+    },
+    {
+      "id": "C08",
+      "control": "Modelo registrado con tags de cumplimiento y firma",
+      "resultado": "PASA",
+      "severidad": "BLOQUEANTE",
+      "detalle": "faltan tags=[]; firma=sí; run=431a0df9…",
+      "iso42001": "A.6.2.7; A.6.2.8",
+      "ai_act": "Art. 11, 12, 17"
+    },
+    {
+      "id": "C09",
+      "control": "Integridad del artefacto del modelo",
+      "resultado": "PASA",
+      "severidad": "BLOQUEANTE",
+      "detalle": "sha256 archivo=86255b2536… registro=86255b2536…",
+      "iso42001": "A.6.2.5 Despliegue",
+      "ai_act": "Art. 15 (ciberseguridad)"
+    },
+    {
+      "id": "C10",
+      "control": "Model card completa (Anexo IV simplificado)",
+      "resultado": "PASA",
+      "severidad": "BLOQUEANTE",
+      "detalle": "secciones faltantes=[]",
+      "iso42001": "A.6.2.7; A.8.2",
+      "ai_act": "Art. 11, Anexo IV"
+    },
+    {
+      "id": "C11",
+      "control": "Evidencia de explicabilidad global (SHAP)",
+      "resultado": "PASA",
+      "severidad": "BLOQUEANTE",
+      "detalle": "reports/shap_global.png",
+      "iso42001": "A.8.2 Información a usuarios",
+      "ai_act": "Art. 13"
+    },
+    {
+      "id": "C12",
+      "control": "Clasificación de riesgo documentada y coherente",
+      "resultado": "PASA",
+      "severidad": "BLOQUEANTE",
+      "detalle": "ALTO RIESGO (Art. 6 / Anexo III)",
+      "iso42001": "6.1.2 Evaluación de riesgos de IA",
+      "ai_act": "Art. 6, Anexo III 5.b"
+    },
+    {
+      "id": "C13",
+      "control": "Retención de logs >= 6 meses",
+      "resultado": "PASA",
+      "severidad": "BLOQUEANTE",
+      "detalle": "183 días",
+      "iso42001": "A.6.2.8 Registro de eventos",
+      "ai_act": "Art. 19, 26.6"
+    },
+    {
+      "id": "C14",
+      "control": "Logging automático completo e íntegro por predicción",
+      "resultado": "PASA",
+      "severidad": "BLOQUEANTE",
+      "detalle": "4/4 registros; campos=True; hash=True",
+      "iso42001": "A.6.2.8 Registro de eventos",
+      "ai_act": "Art. 12"
+    },
+    {
+      "id": "C15",
+      "control": "Supervisión humana: denegaciones y zona gris escalan",
+      "resultado": "PASA",
+      "severidad": "BLOQUEANTE",
+      "detalle": "APROBADO(p=0.9806)/rev=False, APROBADO(p=0.0344)/rev=False, DENEGADO(p=0.1118)/rev=True, APROBADO(p=0.4618)/rev=True",
+      "iso42001": "A.9.2 Uso responsable",
+      "ai_act": "Art. 14"
+    },
+    {
+      "id": "C16",
+      "control": "Validación de entradas (rechaza edad < 18)",
+      "resultado": "PASA",
+      "severidad": "BLOQUEANTE",
+      "detalle": "HTTP 422",
+      "iso42001": "A.6.2.4",
+      "ai_act": "Art. 15"
+    }
+  ],
+  "report_sha256": "9fe18315b3d02f227c72ae1172e076ea3fee7a8f4a885de517be89c253e4029c"
+}

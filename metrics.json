@@ -1,0 +1,15 @@
+{
+  "n_rows": 600,
+  "accuracy_base": 0.8867,
+  "accuracy_mitigated": 0.7933,
+  "dp_diff_base": 0.3424,
+  "dp_diff_mitigated": 0.0805,
+  "eo_diff_base": 0.4464,
+  "eo_diff_mitigated": 0.5446,
+  "override_rate": 0.1867,
+  "accuracy_drop_mitigation": 0.0933,
+  "selection_rate_mitigated_Femenino": 0.9344,
+  "selection_rate_mitigated_Masculino": 0.8539,
+  "selection_rate_base_Femenino": 0.5902,
+  "selection_rate_base_Masculino": 0.9326
+}
