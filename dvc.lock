@@ -1,0 +1,27 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python prepare_data.py
+    deps:
+    - path: gov.py
+      hash: md5
+      md5: fdea9e6f3393e712cdeaacd19ec5b802
+      size: 9046
+    - path: prepare_data.py
+      hash: md5
+      md5: 3fd5ad48c9f15217ebb18af994b60968
+      size: 5290
+    params:
+      params.yaml:
+        data.n_rows: 600
+        data.path: data/datos_credito_eu_ai_act.csv
+        seed: 42
+    outs:
+    - path: data/data_card.json
+      hash: md5
+      md5: 121a6ca0f3e460fce6469bdfbdeaf2f4
+      size: 2888
+    - path: data/datos_credito_eu_ai_act.csv
+      hash: md5
+      md5: 9d5194bd54bbcdf77d06f36210c66eb6
+      size: 29490

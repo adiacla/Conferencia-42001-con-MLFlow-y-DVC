@@ -1,0 +1,5 @@
+﻿mlruns/
+logs/
+models/*.joblib
+__pycache__/
+.venv/
