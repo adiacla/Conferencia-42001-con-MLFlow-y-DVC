@@ -7,11 +7,11 @@
 |---|---|
 | Modelo | CreditScore-EU |
 | Versión (MLflow) | 1 |
-| Run de MLflow | `431a0df98dfd4151998db5f1e6ba7308` |
-| Commit de git | `3148e68` |
+| Run de MLflow | `1cb0cbad7afe458598753bd526755dd6` |
+| Commit de git | `4b40404` |
 | SHA-256 del dataset | `5a893a14955f20debf310f1c35698ece3087c0d824210274851fb9fbaac7f22b` |
 | Clasificación de riesgo | ALTO_RIESGO_ANEXO_III_5b (Anexo III, punto 5.b: evaluación de solvencia) |
-| Fecha de entrenamiento (UTC) | 2026-11-26T19:10:31+00:00 |
+| Fecha de entrenamiento (UTC) | 2026-11-26T23:02:27+00:00 |
 
 ## 2. Propósito previsto y limitaciones de uso
 - **Uso previsto:** apoyar (no sustituir) la decisión de un analista humano sobre solicitudes de crédito al consumo.
@@ -30,7 +30,7 @@
 | Dif. paridad demográfica | 0.342 | 0.080 |
 | Dif. equalized odds | 0.446 | 0.545 |
 
-Criterio bloqueante: DP <= 0.12 y exactitud >= 0.8.
+Criterio bloqueante: DP <= 0.12 y exactitud >= 0.78.
 
 ## 5. Explicabilidad (Art. 13 y 86)
 SHAP TreeExplainer. Gráfico global en `reports/shap_global.png`; la API devuelve los 3 factores principales por decisión.

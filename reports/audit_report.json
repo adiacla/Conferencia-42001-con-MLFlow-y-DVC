@@ -1,9 +1,9 @@
 {
   "modelo": "CreditScore-EU",
   "version": 1,
-  "run_id": "431a0df98dfd4151998db5f1e6ba7308",
-  "git_commit": "608c916",
-  "fecha_utc": "2026-11-26T20:25:15+00:00",
+  "run_id": "1cb0cbad7afe458598753bd526755dd6",
+  "git_commit": "4b40404",
+  "fecha_utc": "2026-11-26T23:08:45+00:00",
   "aprobado": true,
   "controles": [
     {
@@ -83,7 +83,7 @@
       "control": "Modelo registrado con tags de cumplimiento y firma",
       "resultado": "PASA",
       "severidad": "BLOQUEANTE",
-      "detalle": "faltan tags=[]; firma=sí; run=431a0df9…",
+      "detalle": "faltan tags=[]; firma=sí; run=1cb0cbad…",
       "iso42001": "A.6.2.7; A.6.2.8",
       "ai_act": "Art. 11, 12, 17"
     },
@@ -92,7 +92,7 @@
       "control": "Integridad del artefacto del modelo",
       "resultado": "PASA",
       "severidad": "BLOQUEANTE",
-      "detalle": "sha256 archivo=86255b2536… registro=86255b2536…",
+      "detalle": "sha256 archivo=b1f11db94a… registro=b1f11db94a…",
       "iso42001": "A.6.2.5 Despliegue",
       "ai_act": "Art. 15 (ciberseguridad)"
     },
@@ -146,7 +146,7 @@
       "control": "Supervisión humana: denegaciones y zona gris escalan",
       "resultado": "PASA",
       "severidad": "BLOQUEANTE",
-      "detalle": "APROBADO(p=0.9806)/rev=False, APROBADO(p=0.0344)/rev=False, DENEGADO(p=0.1118)/rev=True, APROBADO(p=0.4618)/rev=True",
+      "detalle": "APROBADO(p=0.9806)/rev=False, DENEGADO(p=0.0344)/rev=True, DENEGADO(p=0.1118)/rev=True, APROBADO(p=0.4618)/rev=True",
       "iso42001": "A.9.2 Uso responsable",
       "ai_act": "Art. 14"
     },
@@ -160,5 +160,5 @@
       "ai_act": "Art. 15"
     }
   ],
-  "report_sha256": "9fe18315b3d02f227c72ae1172e076ea3fee7a8f4a885de517be89c253e4029c"
+  "report_sha256": "37f5c2672b0f2ae7ec9b84ad2ead0147cdd9961f4718ce02c28a6b104add6c1b"
 }

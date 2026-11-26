@@ -172,7 +172,7 @@ with tab1:
             impagos = c2.selectbox("Impagos previos", [0, 1, 2, 3], index=1)
             zona = st.selectbox("Zona postal vulnerable", [0, 1], format_func=lambda x: "No (0)" if x == 0 else "Sí (1)")
 
-            evaluar = st.button("Evaluar Solicitud con IA Gobernada", type="primary", use_container_width=True)
+            evaluar = st.button("Evaluar Solicitud con IA Gobernada", type="primary", width='stretch')
 
         with col_res:
             st.markdown("#### Resultado, Explicabilidad y Control Humano")
@@ -256,8 +256,8 @@ with tab2:
     )
 
     c_btn1, c_btn2 = st.columns([1, 1])
-    run_audit = c_btn1.button("🔍 Ejecutar Auditoría de Cumplimiento", type="primary", use_container_width=True)
-    run_promote = c_btn2.button("🚀 Auditar y Promover a Producción (--promote)", use_container_width=True)
+    run_audit = c_btn1.button("🔍 Ejecutar Auditoría de Cumplimiento", type="primary", width='stretch')
+    run_promote = c_btn2.button("🚀 Auditar y Promover a Producción (--promote)", width='stretch')
 
     if run_audit or run_promote:
         cmd = [sys.executable, "audit.py"] + (["--promote"] if run_promote else [])
@@ -282,8 +282,7 @@ with tab2:
 
         df_ctrl = pd.DataFrame(rep["controles"])
         st.dataframe(
-            df_ctrl[["id", "control", "resultado", "severidad", "detalle", "iso42001", "ai_act"]],
-            use_container_width=True,
+            df_ctrl[["id", "control", "resultado", "severidad", "detalle", "iso42001", "ai_act"]], width='stretch' ,
             hide_index=True,
         )
     else:
@@ -308,7 +307,7 @@ with tab3:
             st.image("reports/eda_resumen.png", caption="Análisis Exploratorio de Datos (EDA): Sesgo histórico y distribución de ingresos")
 
         with st.expander("Ver detalle de los 8 Contratos de Calidad de Datos (data_card.json)"):
-            st.dataframe(pd.DataFrame(dcard["controles_calidad"]), use_container_width=True, hide_index=True)
+            st.dataframe(pd.DataFrame(dcard["controles_calidad"]), width='stretch', hide_index=True)
 
     st.divider()
     col_mc, col_sh = st.columns([1.3, 1])
@@ -351,7 +350,7 @@ with tab4:
             m3.metric("Integridad Criptográfica Logs", "✅ ÍNTEGROS (SHA-256)" if integridad else "❌ ALTERADOS")
 
             cols_mostrar = ["occurred_at", "prediction_id", "applicant_pseudo_id", "decision", "probability", "requires_human_review", "model_version"]
-            st.dataframe(df_logs[cols_mostrar].iloc[::-1], use_container_width=True, hide_index=True)
+            st.dataframe(df_logs[cols_mostrar].iloc[::-1], width='stretch', hide_index=True)
 
             with st.expander("Ver último registro JSON completo (evidencia de auditoría Art. 12)"):
                 st.json(registros[-1])
